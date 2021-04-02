@@ -40,5 +40,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/backbone": "^1.4.10",
+    "@types/jquery": "^3.5.5"
   }
 }
