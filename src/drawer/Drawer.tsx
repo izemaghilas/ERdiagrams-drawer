@@ -4,8 +4,15 @@
 
 import React from 'react'
 
+import renderPaper from './controller/renderPaper'
+import './drawer.css'
+
 export default class Drawer extends React.Component {
     
+    componentDidMount() {
+        renderPaper(document.getElementById("paper") as HTMLElement)
+    }
+
     render() {
         return (
             <div className="drawer">
