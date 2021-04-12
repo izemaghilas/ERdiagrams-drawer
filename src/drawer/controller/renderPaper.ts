@@ -1,6 +1,11 @@
 import { dia } from 'jointjs'
 
 
+import handleGraphEvents from './handleGraphEvents'
+
+import TypesEnumeration from '../view/ShapesTypes'
+import handlePaperEvents from './handlePaperEvents'
+
 const paper_width = '100%'
 const paper_height = '100%'
 
@@ -19,9 +24,19 @@ function renderPaper(domElement: HTMLElement):void{
                     thickness: 1.5
                 }
             },
-            model: graph
+            model: graph,
+            interactive: (cellView)=>{
+                if (cellView.model.get("type") === TypesEnumeration.TABLE_TYPE){
+                    return true
+                }
+                
+                return { stopDelegation: false }
+            }
         }
     )
+
+    handleGraphEvents(graph)
+    handlePaperEvents(paper, graph)
 }
 
 
