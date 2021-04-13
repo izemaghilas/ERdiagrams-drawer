@@ -1,10 +1,12 @@
 import { dia } from "jointjs"
 
-import DrawerShapesEnumeration from '../view/DrawerShapesEnumeration'
+import DrawerShapesEnumeration from '../../view/DrawerShapesEnumeration'
 
 const removeColumnSize = {width: 25, height: 25}
 
-const renderColumn = (addColumnCell: dia.Cell, graph: dia.Graph) => {
+const renderColumn = (addColumnCellView: dia.CellView) => {
+    let addColumnCell = addColumnCellView.model
+    let graph = addColumnCell.graph
 
     const addColumnCellPosition: {x: number, y: number} = addColumnCell.get("position")
     const addColumnCellSize: {width: number, height: number} = addColumnCell.get("size")
@@ -21,7 +23,6 @@ const renderColumn = (addColumnCell: dia.Cell, graph: dia.Graph) => {
     columnName.resize(addColumnCellSize.width-removeColumnSize.width, addColumnCellSize.height)
     columnName.attr("label/text", "column")
 
-    
     graph.addCells([column, columnName, removeColumn])
 
     column.embed(removeColumn)

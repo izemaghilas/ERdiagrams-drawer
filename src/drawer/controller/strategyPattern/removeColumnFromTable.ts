@@ -1,6 +1,6 @@
 import { dia } from "jointjs";
 
-import TypesEnumeration from "../view/ShapesTypes"
+import TypesEnumeration from "../../view/ShapesTypes"
 
 function redefineEmbedsPosition(embdedCells: dia.Cell[], columnY: number): void{
  
@@ -32,7 +32,8 @@ function redefineEmbedsPosition(embdedCells: dia.Cell[], columnY: number): void{
     addColumnCell.position(addColumnCell.get("position").x, columnY)
 }
 
-function removeColumnFromTable(removeColumnCell: dia.Cell) {
+function removeColumnFromTable(removeColumnCellView: dia.CellView) {
+    let removeColumnCell = removeColumnCellView.model
     let ancestors = removeColumnCell.getAncestors()
     
     let column = ancestors[0] as dia.Element

@@ -1,10 +1,10 @@
-import { dia, elementTools } from "jointjs"
+import { dia } from "jointjs"
 
 import TypesEnumeration from "../view/ShapesTypes"
-import removeColumnFromTable from "./removeColumnFromTable"
-import renderColumn from "./renderColumn"
 import renderInputElement from "./renderInputElement"
 import renderTable from "./renderTable"
+
+import getPointerClickonElementHandler from './strategyPattern/PointerClickEventHandlerStrategy'
 
 const handlePaperEvents = (paper: dia.Paper, graph: dia.Graph): void=>{
     paper.on("blank:pointerdblclick", function(evt, x, y): void{
@@ -20,6 +20,14 @@ const handlePaperEvents = (paper: dia.Paper, graph: dia.Graph): void=>{
 
     
     paper.on("element:pointerclick", function(cellView: dia.CellView, evt: dia.Event, x, y): void{
+        let pointerClickHandler =  getPointerClickonElementHandler(cellView.model.get("type"))
+        try {
+            pointerClickHandler.handleEvent(cellView)   
+        } catch (error) {
+            console.log("Unknow Handler ", error);
+        }
+
+        /*
         if(cellView.model.get("type") === TypesEnumeration.ADD_COLUMN_TYPE){
             renderColumn(cellView.model, graph)
         }
@@ -36,6 +44,7 @@ const handlePaperEvents = (paper: dia.Paper, graph: dia.Graph): void=>{
             })
             cellView.addTools(toolsView)
         }
+        */
 
     })
     
