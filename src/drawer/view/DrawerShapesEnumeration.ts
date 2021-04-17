@@ -6,9 +6,10 @@ import InputElement from "./InputElement"
 import RemoveColumn from "./RemoveColumn"
 import Table from "./Table"
 import Label from "./Label"
+import Relation from "./Relation"
 
 type DrawerShapes = {
-    getView: ()=>dia.Element
+    getView: ()=>dia.Element | dia.Link
 }
 
 const TABLE: DrawerShapes = {
@@ -42,6 +43,20 @@ const REMOVE_COLUMN: DrawerShapes = {
         return new RemoveColumn()
     }
 }
+const RELATION: DrawerShapes= {
+    getView: ()=>{
+        let relation = new Relation()
+        relation.appendLabel({
+            attrs: {
+                label: {
+                    text: relation.get("relationTypes")[0]
+                }
+            }
+        })
+        
+        return relation
+    }
+}
 
 const DrawerShapesEnumeration = {
    TABLE,
@@ -49,7 +64,8 @@ const DrawerShapesEnumeration = {
    COLUMN,
    ADD_COLUMN,
    REMOVE_COLUMN,
-   INPUT_ELEMENT
+   INPUT_ELEMENT,
+   RELATION
 } as const
 
 export default DrawerShapesEnumeration
