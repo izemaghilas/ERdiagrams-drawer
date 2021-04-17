@@ -11,14 +11,14 @@ const renderColumn = (addColumnCellView: dia.CellView) => {
     const addColumnCellPosition: {x: number, y: number} = addColumnCell.get("position")
     const addColumnCellSize: {width: number, height: number} = addColumnCell.get("size")
 
-    let column = DrawerShapesEnumeration.COLUMN.getView()
+    let column = DrawerShapesEnumeration.COLUMN.getView() as dia.Element
     column.position(addColumnCellPosition.x, addColumnCellPosition.y)
 
-    let removeColumn = DrawerShapesEnumeration.REMOVE_COLUMN.getView()
+    let removeColumn = DrawerShapesEnumeration.REMOVE_COLUMN.getView() as dia.Element
     removeColumn.position(addColumnCellPosition.x, addColumnCellPosition.y)
     removeColumn.set("size", removeColumnSize)
     
-    let columnName = DrawerShapesEnumeration.LABEL.getView()
+    let columnName = DrawerShapesEnumeration.LABEL.getView() as dia.Element
     columnName.position(addColumnCellPosition.x+removeColumnSize.width, addColumnCellPosition.y)
     columnName.resize(addColumnCellSize.width-removeColumnSize.width, addColumnCellSize.height)
     columnName.attr("label/text", "column")

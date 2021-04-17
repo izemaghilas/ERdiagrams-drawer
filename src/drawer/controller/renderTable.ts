@@ -7,16 +7,16 @@ const children_height: number = 25
 
 const renderTable = (graph: dia.Graph, position: {x: number; y: number}): void=>{
     
-    let table = DrawerShapesEnumeration.TABLE.getView()
+    let table = DrawerShapesEnumeration.TABLE.getView() as dia.Element
     table.position(position.x, position.y)
     
 
-    let tableName = DrawerShapesEnumeration.LABEL.getView()
+    let tableName = DrawerShapesEnumeration.LABEL.getView() as dia.Element
     tableName.resize(table_width, children_height)
     tableName.position(position.x, position.y)
     tableName.attr("label/text", "Table")
 
-    let addColumn =  DrawerShapesEnumeration.ADD_COLUMN.getView()
+    let addColumn =  DrawerShapesEnumeration.ADD_COLUMN.getView() as dia.Element
     addColumn.resize(table_width, children_height)
     addColumn.position(position.x, position.y+children_height)
 

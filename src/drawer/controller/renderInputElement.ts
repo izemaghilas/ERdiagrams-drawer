@@ -6,18 +6,6 @@ const handleBlurEvent = (inputValue: string, inputElement: dia.Element, graph: d
     // define custom property to inputElement (custom event)  
     const valueLength: number = inputValue.length * 10 + 1
     inputElement.prop("LabelValue", inputValue, {length: valueLength})
-
-    /*
-    let tableName: dia.Element = DrawerShapesEnumeration.LABEL.getView()
-    const inputElementPosition: {x: number; y: number} = inputElement.get('position')
-    tableName.position(inputElementPosition.x, inputElementPosition.y)
-    tableName.resize(valueLength, inputElement.size().height)
-    
-    tableName.attr("label/text", inputValue)
-    tableName.addTo(graph)
-    inputElement.getParentCell()?.embed(tableName)
-    inputElement.remove()
-    */
 }
 
 
@@ -26,7 +14,7 @@ const renderInputElement = (labelCell: dia.Cell, graph: dia.Graph, paper: dia.Pa
     const labelCellPosition: {x: number, y: number} = labelCell.get('position')
     const labelCellSize: {width: number, height: number} = labelCell.get('size')
 
-    const inputElement = DrawerShapesEnumeration.INPUT_ELEMENT.getView()
+    const inputElement = DrawerShapesEnumeration.INPUT_ELEMENT.getView() as dia.Element
     inputElement.position(labelCellPosition.x, labelCellPosition.y)
     inputElement.set("size", labelCellSize)
     inputElement.addTo(graph)
