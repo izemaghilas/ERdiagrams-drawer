@@ -1,41 +1,35 @@
-import { dia } from "jointjs"
+
 import TypesEnumeration from "../../view/ShapesTypes"
 import removeColumnFromTable from "./removeColumnFromTable"
 import renderColumn from "./renderColumn"
+import renderTableTools from "./renderTableTools"
 
-type PointerClickEventHandler = {
-    elementType: string; // event target
-    handleEvent: (
-        target: dia.CellView
-    )=>void
-}
+import ElementEventsHandler from "./types"
 
-const labelOnPointerClick: PointerClickEventHandler = {
+
+const labelOnPointerClick: ElementEventsHandler = {
     elementType: TypesEnumeration.LABEL_TYPE,
-    handleEvent: ()=>{
-        
-    }
+    handleEvent: renderTableTools
 }
-const addColumnOnPointerClick: PointerClickEventHandler = {
+const addColumnOnPointerClick: ElementEventsHandler = {
     elementType: TypesEnumeration.ADD_COLUMN_TYPE,
     handleEvent: renderColumn
 }
-const removeColumnOnPointerClick: PointerClickEventHandler = {
+const removeColumnOnPointerClick: ElementEventsHandler = {
     elementType: TypesEnumeration.REMOVE_COLUMN_TYPE,
     handleEvent: removeColumnFromTable
 }
 
-
-const PointerClickEventHandlers: readonly PointerClickEventHandler[] = [
+const PointerClickEventHandlers: readonly ElementEventsHandler[] = [
     labelOnPointerClick,
     addColumnOnPointerClick,
     removeColumnOnPointerClick
 ]
 
 
-function getPointerClickonElementHandler(elementType: string): PointerClickEventHandler {
+function getPointerClickonElementHandler(elementType: string): ElementEventsHandler {
     return PointerClickEventHandlers
-        .find(handler=>handler.elementType === elementType) as PointerClickEventHandler
+        .find(handler=>handler.elementType === elementType) as ElementEventsHandler
 }
 
 export default getPointerClickonElementHandler
