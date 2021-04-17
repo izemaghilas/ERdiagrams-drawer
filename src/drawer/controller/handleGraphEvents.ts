@@ -10,8 +10,7 @@ const handleGraphEvents = (graph : dia.Graph): void=>{
     })
     
     graph.on("change:LabelValue", function(inputElement: dia.Element, value, opt){
-        
-        let label = DrawerShapesEnumeration.LABEL.getView()
+        let label = DrawerShapesEnumeration.LABEL.getView() as dia.Element
         label.set("position", inputElement.get("position"))
         label.resize(opt.length, inputElement.size().height)
         label.attr("label/text", value)
