@@ -29,8 +29,12 @@ function renderPaper(domElement: HTMLElement):void{
                 if (cellView.model.get("type") === TypesEnumeration.TABLE_TYPE){
                     return true
                 }
-                
-                return { stopDelegation: false }
+
+                return { 
+                    stopDelegation: false,
+                    labelMove: false,
+                    linkMove: false,
+                }
             }
         }
     )
