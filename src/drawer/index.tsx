@@ -1,3 +1,3 @@
-import Drawer from './Drawer'
+import Drawer from './components/Drawer'
 
 export default Drawer
