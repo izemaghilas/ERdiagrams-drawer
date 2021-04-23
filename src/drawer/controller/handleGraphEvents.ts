@@ -1,6 +1,6 @@
 import { dia } from "jointjs"
 
-import DrawerShapesEnumeration from "../view/DrawerShapesEnumeration"
+import DrawerShapesFactory from "../view/DrawerShapesFactory"
 import TypesEnumeration from "../view/ShapesTypes"
 
 const handleGraphEvents = (graph : dia.Graph): void=>{
@@ -10,7 +10,7 @@ const handleGraphEvents = (graph : dia.Graph): void=>{
     })
     
     graph.on("change:LabelValue", function(inputElement: dia.Element, value, opt){
-        let label = DrawerShapesEnumeration.LABEL.getView() as dia.Element
+        let label = DrawerShapesFactory.LABEL.getShape() as dia.Element
         label.set("position", inputElement.get("position"))
         label.resize(opt.length, inputElement.size().height)
         label.attr("label/text", value)
