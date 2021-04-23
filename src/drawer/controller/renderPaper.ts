@@ -9,7 +9,7 @@ import handlePaperEvents from './handlePaperEvents'
 const paper_width = '100%'
 const paper_height = '100%'
 
-function renderPaper(domElement: HTMLElement):void{
+function renderPaper(domElement: HTMLElement):dia.Paper{
     const graph = new dia.Graph()
     const paper = new dia.Paper(
         {
@@ -41,6 +41,8 @@ function renderPaper(domElement: HTMLElement):void{
 
     handleGraphEvents(graph)
     handlePaperEvents(paper, graph)
+    
+    return paper
 }
 
 
