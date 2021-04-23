@@ -9,42 +9,42 @@ import Label from "./Label"
 import Relation from "./Relation"
 
 type DrawerShapes = {
-    getView: ()=>dia.Element | dia.Link
+    getShape: ()=>dia.Element | dia.Link
 }
 
 const TABLE: DrawerShapes = {
-    getView: ()=>{
+    getShape: ()=>{
         return new Table()
     }
 }
 const LABEL: DrawerShapes = {
-    getView: ()=>{
+    getShape: ()=>{
         return new Label()
     }
 }
 
 const INPUT_ELEMENT: DrawerShapes = {
-    getView: ()=>{
+    getShape: ()=>{
         return new InputElement()
     }
 }
 const COLUMN: DrawerShapes = {
-    getView: ()=>{
+    getShape: ()=>{
         return new Column()
     }
 }
 const ADD_COLUMN: DrawerShapes = {
-    getView: ()=>{
+    getShape: ()=>{
         return new AddColumn()
     }
 }
 const REMOVE_COLUMN: DrawerShapes = {
-    getView: ()=>{
+    getShape: ()=>{
         return new RemoveColumn()
     }
 }
 const RELATION: DrawerShapes= {
-    getView: ()=>{
+    getShape: ()=>{
         let relation = new Relation()
         relation.appendLabel({
             attrs: {
@@ -58,7 +58,7 @@ const RELATION: DrawerShapes= {
     }
 }
 
-const DrawerShapesEnumeration = {
+const DrawerShapesFactory = {
    TABLE,
    LABEL,
    COLUMN,
@@ -68,4 +68,4 @@ const DrawerShapesEnumeration = {
    RELATION
 } as const
 
-export default DrawerShapesEnumeration
+export default DrawerShapesFactory
