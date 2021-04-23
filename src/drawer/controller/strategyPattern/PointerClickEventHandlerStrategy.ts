@@ -2,14 +2,14 @@
 import TypesEnumeration from "../../view/ShapesTypes"
 import removeColumnFromTable from "./removeColumnFromTable"
 import renderColumn from "./renderColumn"
-import renderTableTools from "./renderTableTools"
+import renderInputElement from "./renderInputElement"
 
 import ElementEventsHandler from "./types"
 
 
 const labelOnPointerClick: ElementEventsHandler = {
     elementType: TypesEnumeration.LABEL_TYPE,
-    handleEvent: renderTableTools
+    handleEvent: renderInputElement
 }
 const addColumnOnPointerClick: ElementEventsHandler = {
     elementType: TypesEnumeration.ADD_COLUMN_TYPE,
