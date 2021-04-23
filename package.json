@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "@types/backbone": "^1.4.10",
+    "@types/file-saver": "^2.0.2",
     "@types/jquery": "^3.5.5"
   }
 }
