@@ -21,7 +21,8 @@ const Label = dia.Element.define(
                 refY: '50%',
                 fontSize: '14px',
                 fontWeight: 'bold',
-                fill: '#333333'
+                fill: '#333333',
+                cursor: 'pointer'
             }
         }
     },
