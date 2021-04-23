@@ -1,19 +1,13 @@
 import { dia } from "jointjs"
 
 import TypesEnumeration from "../view/ShapesTypes"
-import renderInputElement from "./renderInputElement"
 import renderTable from "./renderTable"
 
 import getPointerClickonElementHandler from './strategyPattern/PointerClickEventHandlerStrategy'
 
 const handlePaperEvents = (paper: dia.Paper, graph: dia.Graph): void=>{
     paper.on("blank:pointerdblclick", function(evt, x, y): void{
-        renderTable(graph, {x: x, y: y})
-    })
-    paper.on("element:pointerdblclick", function(cellView: dia.CellView, evt: dia.Event, x, y): void{
-        if(cellView.model.get("type") === TypesEnumeration.LABEL_TYPE){
-            renderInputElement(cellView.model, graph, paper)
-        }
+        renderTable(paper, graph, {x: x, y: y})
     })
     paper.on("element:pointerclick", function(cellView: dia.CellView, evt: dia.Event, x, y): void{
         let pointerClickHandler =  getPointerClickonElementHandler(cellView.model.get("type"))
@@ -30,6 +24,24 @@ const handlePaperEvents = (paper: dia.Paper, graph: dia.Graph): void=>{
     paper.on("link:mouseleave", function(relationView: dia.LinkView){
         let linkRemoveButton = relationView.findLabelNode(0, "remove") as SVGElement
         linkRemoveButton.style.visibility ='hidden'
+    })
+    paper.on("element:mouseenter", function(cellView: dia.ElementView){
+        let ancestors = cellView.model.getAncestors()
+        if(ancestors.length === 0){
+            cellView.showTools()
+        }
+        else{
+            ancestors[ancestors.length-1].findView(paper).showTools()
+        }
+    })
+    paper.on("element:mouseleave", function(cellView: dia.ElementView){
+        let ancestors = cellView.model.getAncestors()
+        if(ancestors.length === 0){
+            cellView.hideTools()
+        }
+        else{
+            ancestors[ancestors.length-1].findView(paper).hideTools()
+        }
     })
 
     // ******** relation events *******
