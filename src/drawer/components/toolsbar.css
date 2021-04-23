@@ -1,0 +1,55 @@
+.tools-bar {
+    --tool-display: inline-block;
+    --tool-width: 20px;
+    --tool-height: 20px;
+    --tool-container-width: 30px;
+    --tool-container-height: 30px;
+    --tool-display: inline-block;
+    --tool-margin: 6px;
+    --tool-cursor: pointer;
+    --tool-background-size: cover;
+    
+    width: 100%;
+    height: 40px;
+    border-top: 1px solid #dadce0;
+    border-bottom: 1px solid #dadce0;
+}
+
+.delete-diagram-container, .export-diagram-container {
+    display: var(--tool-display);
+    margin: var(--tool-margin);
+    width: var(--tool-container-width);
+    height: var(--tool-container-height);
+}
+
+.tools-seperator {
+    display: var(--tool-display);
+    width: 1px;
+    margin: var(--tool-margin);
+    height: var(--tool-height);
+    background-color: black;
+}
+
+.delete-diagram {
+    display: var(--tool-display);
+    margin: var(--tool-margin);
+    padding-right: 2%;
+    background-image: url(./images/rubbish.png);
+    background-size: var(--tool-background-size);
+    width: var(--tool-width);
+    height: var(--tool-height);
+    cursor: var(--tool-cursor);
+}
+.delete-diagram-container>:active, .export-diagram-container>:active {
+    background-color: gold;
+}
+
+.export-diagram {
+    display: var(--tool-display);
+    margin: var(--tool-margin);
+    background-image: url(./images/share.png);
+    background-size: var(--tool-background-size);
+    width: var(--tool-width);
+    height: var(--tool-height);
+    cursor: var(--tool-cursor);
+}

@@ -1,0 +1,41 @@
+.drawer {
+    height: 100vh;
+    width: 100%;
+}
+
+.drawer-header {
+    height: 60px;
+    width: 100%;
+}
+.drawer-header img {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-left: 8px;
+}
+.drawer-header h4 {
+    display: inline;
+    margin-left: 6px;
+    margin-top: 2%;
+}
+
+.drawer main {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: 84%;
+
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+.paper-container {
+    margin-left: 3%;
+    margin-top: 3%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+
+    width: 100%;
+}
+
