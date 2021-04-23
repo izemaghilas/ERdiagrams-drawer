@@ -1,6 +1,6 @@
 import { dia } from 'jointjs'
 
-import DrawerShapesFactory from '../../view/DrawerShapesEnumeration'
+import DrawerShapesFactory from '../../view/DrawerShapesFactory'
 
 const handleBlurEvent = (inputValue: string, inputElement: dia.Element): void=>{
     // define custom property to inputElement (custom event)  
