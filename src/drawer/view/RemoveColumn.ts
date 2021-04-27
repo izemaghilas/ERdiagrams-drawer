@@ -22,6 +22,7 @@ const RemoveColumn = dia.Element.define(
                 refY: '40%',
                 fill: '#967559',
                 cursor: 'pointer',
+                title: "remove column"
             }
         }
     },

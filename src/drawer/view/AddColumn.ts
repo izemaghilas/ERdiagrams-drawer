@@ -20,7 +20,7 @@ const AddColumn = dia.Element.define(
                 width: 15,
                 height: 15,
                 fill: '#FFFFFF',
-                opacity: 0,
+                opacity: 0
             },
             horizentalLine: {
                 ref: 'container',
@@ -30,6 +30,7 @@ const AddColumn = dia.Element.define(
                 height: 5,
                 fill: '#967559',
                 cursor: 'pointer',
+                title: "new column"
             },
             verticalLine: {
                 ref: 'container',
@@ -39,6 +40,7 @@ const AddColumn = dia.Element.define(
                 height: 15,
                 fill: '#967559',
                 cursor: 'pointer',
+                title: "new column"
             }
         }
     },
