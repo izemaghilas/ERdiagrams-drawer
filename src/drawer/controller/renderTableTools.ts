@@ -19,7 +19,7 @@ function renderTableTools(tableView: dia.CellView): void {
                 attributes: {
                     'r': 10,
                     'fill': '#ffdec2',
-                    'cursor': 'pointer'    
+                    'cursor': 'pointer'   
                 }
             },
             {
@@ -30,7 +30,7 @@ function renderTableTools(tableView: dia.CellView): void {
                     'fill': '#967559',
                     'stroke': '#967559',
                     'stroke-width': 2,
-                    'pointer-events': 'none',
+                    'pointer-events': 'none'
                 }
             }
         ],
