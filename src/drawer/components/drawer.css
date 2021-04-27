@@ -4,6 +4,9 @@
 }
 
 .drawer-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     height: 60px;
     width: 100%;
 }
@@ -16,7 +19,15 @@
 .drawer-header h4 {
     display: inline;
     margin-left: 6px;
-    margin-top: 2%;
+}
+.user-guide-container {
+    display: inline-block;
+    margin-right: 5%;
+    background-image: url("./images/grayRobot.png");
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
 }
 
 .drawer main {

@@ -8,9 +8,11 @@ import { dia } from 'jointjs'
 import renderPaper from '../controller/renderPaper'
 
 import ToolsBar from './ToolsBar'
+import UserGuide from './UserGuide'
 
 import './drawer.css'
 import logo from './images/logoER.png'
+
 
 export default class Drawer extends React.Component<{}, {paper: dia.Paper}> {
     
@@ -29,10 +31,13 @@ export default class Drawer extends React.Component<{}, {paper: dia.Paper}> {
         return (
             <div className="drawer">
                 <div className="drawer-header">
-                    <img src={logo} alt="logo"/>
-                    <h4>Entity Relationship Diagram</h4>
+                    <div>
+                        <img src={logo} alt="logo"/>
+                        <h4>Entity Relationship Diagram</h4>
+                    </div>
+                    <UserGuide paper={this.state.paper}/>
                 </div>
-                <ToolsBar paper={this.state.paper as dia.Paper}/>
+                <ToolsBar paper={this.state.paper}/>
                 <main>
                     <div className="paper-container">
                         <div id="paper"></div>
