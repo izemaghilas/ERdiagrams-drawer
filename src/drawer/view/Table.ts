@@ -2,6 +2,8 @@ import { dia } from 'jointjs'
 
 import TypesEnumeration from "./ShapesTypes"
 
+const state: number[] = [110]
+
 const Table = dia.Element.define(
     TypesEnumeration.TABLE_TYPE,
     {
@@ -11,10 +13,10 @@ const Table = dia.Element.define(
                 refHeight: '100%',
                 strokeWidth: 1,
                 stroke: '#FFFFFF',
-                fill: 'lightblue'
+                fill: 'transparent'
             }
         },
-        widthState: [] // track the table width => reset width when removing columns
+        widthState: state // track the table width => ability to reset
     },
     {
         markup: [
