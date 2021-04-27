@@ -34,16 +34,14 @@ function redefineEmbedsPosition(embdedCells: dia.Cell[], columnY: number): void{
 
 function removeColumnFromTable(removeColumnCellView: dia.CellView) {
     let removeColumnCell = removeColumnCellView.model
-    let ancestors = removeColumnCell.getAncestors()
-    
-    let column = ancestors[0] as dia.Element
+    let column = removeColumnCell.getParentCell() as dia.Element
     const columnPosition = column.get("position")
-    column.remove()
-
-    let table = ancestors[ancestors.length-1] as dia.Element
+    let table = column.getParentCell() as dia.Element
 
     redefineEmbedsPosition(table.getEmbeddedCells(), columnPosition.y)
     table.fitEmbeds()
+
+    table.prop("RemoveColumn", column)
 
 }
 
