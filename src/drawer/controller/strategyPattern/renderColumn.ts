@@ -20,13 +20,22 @@ const renderColumn = (addColumnCellView: dia.CellView) => {
     
     let columnName = DrawerShapesFactory.LABEL.getShape() as dia.Element
     columnName.position(addColumnCellPosition.x+removeColumnSize.width, addColumnCellPosition.y)
-    columnName.resize(addColumnCellSize.width-removeColumnSize.width, addColumnCellSize.height)
+    columnName.resize(addColumnCellSize.width-removeColumnSize.width*2, addColumnCellSize.height)
     columnName.attr("label/text", "column")
+    
+    let primaryKey = DrawerShapesFactory.PRIMARY_KEY.getShape() as dia.Element
+    primaryKey.set("size", removeColumnSize)
+    primaryKey.position(
+        addColumnCellPosition.x+removeColumnSize.width+columnName.size().width,
+        addColumnCellPosition.y
+    )
 
-    graph.addCells([column, columnName, removeColumn])
+    graph.addCells([column, columnName, removeColumn, primaryKey])
 
     column.embed(removeColumn)
     column.embed(columnName)
+    column.embed(primaryKey)
+    column.fitEmbeds()
     
     addColumnCell.set(
         "position", 
@@ -36,8 +45,9 @@ const renderColumn = (addColumnCellView: dia.CellView) => {
         }
     )
 
-    addColumnCell.getParentCell()?.embed(column)
-    
+    let table = addColumnCell.getParentCell() as dia.Element
+    table.embed(column)
+    table.fitEmbeds()
 }
 
 export default renderColumn

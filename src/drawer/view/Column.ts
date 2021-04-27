@@ -10,9 +10,10 @@ const Column = dia.Element.define(
                 refWidth: '100%',
                 refHeight: '100%',
                 strokeWidth: 1,
-                fill: '#ffdec2',
+                fill: 'transparent',
             }
-        }
+        },
+        primaryKey : false
     },
     {
         markup: [
