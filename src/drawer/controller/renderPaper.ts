@@ -39,7 +39,7 @@ function renderPaper(domElement: HTMLElement):dia.Paper{
         }
     )
 
-    handleGraphEvents(graph)
+    handleGraphEvents(graph, paper)
     handlePaperEvents(paper, graph)
     
     return paper
