@@ -4,8 +4,7 @@ import DrawerShapesFactory from '../../view/DrawerShapesFactory'
 
 const handleBlurEvent = (inputValue: string, inputElement: dia.Element): void=>{
     // define custom property to inputElement (custom event)  
-    const valueLength: number = inputValue.length * 10 + 1
-    inputElement.prop("LabelValue", inputValue, {length: valueLength})
+    inputElement.prop("LabelValue", inputValue)
 }
 
 const renderInputElement = (labelCellView: dia.CellView): void=>{
