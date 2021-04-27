@@ -3,7 +3,7 @@ import { dia } from "jointjs";
 import renderTableTools from './renderTableTools'
 import DrawerShapesFactory from '../view/DrawerShapesFactory'
 
-const table_width: number = 100
+const table_width: number = 110
 const children_height: number = 25
 
 const renderTable = (paper: dia.Paper, graph: dia.Graph, position: {x: number; y: number}): void=>{
@@ -25,6 +25,7 @@ const renderTable = (paper: dia.Paper, graph: dia.Graph, position: {x: number; y
     
     table.embed(tableName)
     table.embed(addColumn)
+    table.fitEmbeds()
 
     //add table tools
     let tableView = table.findView(paper)
