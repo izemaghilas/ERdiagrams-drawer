@@ -22,6 +22,8 @@ export default class ToolsBar extends React.Component<ToolsBarProps, {}> {
                 <tools.DeleteDiagramTool graph={this.props.paper.model}/>
                 <Separator />
                 <tools.ExportDiagramTool paper={this.props.paper}/>
+                <Separator />
+                <tools.GitHubRepoTool />
             </div>
         )
     }

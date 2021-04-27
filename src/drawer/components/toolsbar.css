@@ -15,7 +15,7 @@
     border-bottom: 1px solid #dadce0;
 }
 
-.delete-diagram-container, .export-diagram-container {
+.delete-diagram-container, .export-diagram-container, .github-repo-container {
     display: var(--tool-display);
     margin: var(--tool-margin);
     width: var(--tool-container-width);
@@ -48,6 +48,16 @@
     display: var(--tool-display);
     margin: var(--tool-margin);
     background-image: url(./images/share.png);
+    background-size: var(--tool-background-size);
+    width: var(--tool-width);
+    height: var(--tool-height);
+    cursor: var(--tool-cursor);
+}
+
+.github-repo {
+    display: var(--tool-display);
+    margin: var(--tool-margin);
+    background-image: url("./images/github.png");
     background-size: var(--tool-background-size);
     width: var(--tool-width);
     height: var(--tool-height);
