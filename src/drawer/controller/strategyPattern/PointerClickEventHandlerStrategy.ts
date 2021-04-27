@@ -3,8 +3,9 @@ import TypesEnumeration from "../../view/ShapesTypes"
 import removeColumnFromTable from "./removeColumnFromTable"
 import renderColumn from "./renderColumn"
 import renderInputElement from "./renderInputElement"
+import setPrimaryKey from "./setPrimaryKey"
 
-import ElementEventsHandler from "./types"
+import { ElementEventsHandler } from "./types"
 
 
 const labelOnPointerClick: ElementEventsHandler = {
@@ -19,11 +20,16 @@ const removeColumnOnPointerClick: ElementEventsHandler = {
     elementType: TypesEnumeration.REMOVE_COLUMN_TYPE,
     handleEvent: removeColumnFromTable
 }
+const primaryKeyOnPointerClick: ElementEventsHandler = {
+    elementType: TypesEnumeration.PRIMARY_KEY,
+    handleEvent: setPrimaryKey
+}
 
 const PointerClickEventHandlers: readonly ElementEventsHandler[] = [
     labelOnPointerClick,
     addColumnOnPointerClick,
-    removeColumnOnPointerClick
+    removeColumnOnPointerClick,
+    primaryKeyOnPointerClick
 ]
 
 
