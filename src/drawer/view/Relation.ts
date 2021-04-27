@@ -10,7 +10,11 @@ const Relation = dia.Link.define(
                 connection: true,
                 stroke: '#e9967a',
                 strokeWidth: 2,
-                strokeLinejoin: 'round'
+                strokeLinejoin: 'round',
+                targetMarker: {
+                    'type': 'path',
+                    'd': 'M 10 -5 0 0 10 5 z'
+                }
             },
             wrapper: {
                 connection: true,
