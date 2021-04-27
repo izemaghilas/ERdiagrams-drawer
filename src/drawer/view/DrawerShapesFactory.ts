@@ -7,6 +7,8 @@ import RemoveColumn from "./RemoveColumn"
 import Table from "./Table"
 import Label from "./Label"
 import Relation from "./Relation"
+import PrimaryKey from "./PrimaryKey"
+
 
 type DrawerShapes = {
     getShape: ()=>dia.Element | dia.Link
@@ -57,6 +59,11 @@ const RELATION: DrawerShapes= {
         return relation
     }
 }
+const PRIMARY_KEY: DrawerShapes = {
+    getShape: ()=>{
+        return new PrimaryKey()
+    }
+}
 
 const DrawerShapesFactory = {
    TABLE,
@@ -65,7 +72,8 @@ const DrawerShapesFactory = {
    ADD_COLUMN,
    REMOVE_COLUMN,
    INPUT_ELEMENT,
-   RELATION
+   RELATION,
+   PRIMARY_KEY,
 } as const
 
 export default DrawerShapesFactory

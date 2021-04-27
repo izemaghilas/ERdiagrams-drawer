@@ -6,7 +6,8 @@ enum TypesEnumeration {
     ADD_COLUMN_TYPE = "drawer.AddColumn",
     REMOVE_COLUMN_TYPE = "drawer.RemoveColumn",
     INPUT_ELEMENT_TYPE = "drawer.InputElement",
-    RELATION_TYPE = "drawer.Relation"
+    RELATION_TYPE = "drawer.Relation",
+    PRIMARY_KEY = "drawer.PrimaryKey",
 }
 
 export default TypesEnumeration
