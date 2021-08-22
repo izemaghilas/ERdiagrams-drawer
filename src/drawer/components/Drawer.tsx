@@ -8,7 +8,6 @@ import { dia } from 'jointjs'
 import renderPaper from '../controller/renderPaper'
 
 import ToolsBar from './ToolsBar'
-import UserGuide from './UserGuide'
 
 import './drawer.css'
 import logo from './images/logoER.png'
