@@ -35,7 +35,6 @@ export default class Drawer extends React.Component<{}, {paper: dia.Paper}> {
                         <img src={logo} alt="logo"/>
                         <h4>Entity Relationship Diagram</h4>
                     </div>
-                    <UserGuide paper={this.state.paper}/>
                 </div>
                 <ToolsBar paper={this.state.paper}/>
                 <main>
