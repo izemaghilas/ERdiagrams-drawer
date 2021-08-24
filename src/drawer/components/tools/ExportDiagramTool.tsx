@@ -1,5 +1,6 @@
 import { dia, util } from 'jointjs'
 import React from 'react'
+import { FiDownload } from 'react-icons/fi'
 
 type ToolProps = {
     paper: dia.Paper
@@ -40,11 +41,7 @@ export default class ExportDiagramTool extends React.Component<ToolProps, {}> {
     render() {
         return (
             <div className="export-diagram-container">
-                <div 
-                    className="export-diagram" 
-                    title="export diagram as png"
-                    onClick = {this.state.export}
-                ></div>
+                <FiDownload size={20} className="export-diagram" title="export diagram as png" onClick = {this.state.export} />
             </div>
         )
     }

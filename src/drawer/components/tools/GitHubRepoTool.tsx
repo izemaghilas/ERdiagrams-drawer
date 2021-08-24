@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react'
+import { SiGithub } from 'react-icons/si'
 
 const url = "https://github.com/izemaghilas/ERdiagrams-drawer"
 
@@ -15,11 +16,7 @@ export default class GitHubRepoTool extends React.Component<{}, {}> {
     render() {
         return (
             <div className="github-repo-container">
-                <div 
-                    className="github-repo" 
-                    title="github repository"
-                    onClick={this.state.goToGitHubRepo}
-                ></div>
+                <SiGithub size={20} className="github-repo" title="github repository" onClick={this.state.goToGitHubRepo} />
             </div>
         )
     }

@@ -1,5 +1,6 @@
 import { dia } from 'jointjs'
 import React from 'react'
+import { FiTrash2 } from 'react-icons/fi'
 
 type ToolProps = {
     graph: dia.Graph
@@ -18,11 +19,7 @@ export default class DeleteDiagramTool extends React.Component<ToolProps, {}> {
     render() {
         return(
             <div className="delete-diagram-container">
-                <div 
-                    className="delete-diagram" 
-                    title="clear paper"
-                    onClick={this.state.delete}
-                ></div>
+                <FiTrash2 size={20} className="delete-diagram" title="clear paper" onClick={this.state.delete}/>
             </div>
         )
     }
