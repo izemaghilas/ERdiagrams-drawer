@@ -1,0 +1,40 @@
+.usage-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 10;
+}
+
+.usage-card-body-action-labels-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    background-color: beige;
+    flex-shrink: 0;
+    cursor: pointer;
+    height: 70px;
+    border-left: 1px solid #967559;
+    border-right: 1px solid #967559;
+}
+.usage-card-body-action-label-container {
+    display: inline-block;
+    font-weight: 700;
+    color: #000;
+    background-color: #F1FFF7;
+    border: 1px solid #967559;
+    border-radius: 4px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    margin: 5px;
+}
+
+.usage-card-body-actions-container {
+    background-color: #fff;
+    flex-grow: 3;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 1px solid #967559;
+}
