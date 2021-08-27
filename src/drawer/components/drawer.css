@@ -20,12 +20,11 @@
     display: inline;
     margin-left: 6px;
 }
-/*
+
 .drawer-header-assistant-icon {
     margin-right: 3%;
     cursor: pointer;
 }
-*/
 
 .drawer main {
     display: flex;

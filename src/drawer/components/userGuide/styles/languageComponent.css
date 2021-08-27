@@ -1,0 +1,14 @@
+.card-usage-header-language-container {
+    display: inline-block;
+    font-weight: 700;
+    background-color: #F1FFF7;
+    color: #967559;
+    align-self: center;
+    margin-left: 10px;
+    border: 1px solid #967559;
+    border-radius: 4px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
