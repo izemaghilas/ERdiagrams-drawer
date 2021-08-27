@@ -52,7 +52,6 @@ const handleGraphEvents = (graph : dia.Graph, paper: dia.Paper): void=>{
         let width = getTextWidth(label, paper) + 50 
 
         let widthState = table.get("widthState") as number[]
-        console.log(widthState);
         
         if(width === widthState[widthState.length-1]){
             widthState.pop()
