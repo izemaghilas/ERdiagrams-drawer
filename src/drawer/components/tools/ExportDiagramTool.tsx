@@ -13,7 +13,8 @@ export default class ExportDiagramTool extends React.Component<ToolProps, {}> {
     }
 
     private export(): void {
-        let svgNode = document.querySelector("svg") as SVGElement
+		let paperNode = document.getElementById("paper")
+        let svgNode = paperNode?.querySelector("svg") as SVGElement
         let svgNodeClone = svgNode.cloneNode(true) as SVGElement
         let paperArea = this.props.paper.getArea()
         
