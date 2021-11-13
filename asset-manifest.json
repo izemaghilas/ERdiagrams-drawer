@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/ERdiagrams-drawer/static/css/main.7bfe143d.chunk.css",
+    "main.js": "/ERdiagrams-drawer/static/js/main.9955c4fd.chunk.js",
+    "main.js.map": "/ERdiagrams-drawer/static/js/main.9955c4fd.chunk.js.map",
+    "runtime-main.js": "/ERdiagrams-drawer/static/js/runtime-main.31679080.js",
+    "runtime-main.js.map": "/ERdiagrams-drawer/static/js/runtime-main.31679080.js.map",
+    "static/css/2.8c035d76.chunk.css": "/ERdiagrams-drawer/static/css/2.8c035d76.chunk.css",
+    "static/js/2.ff8f19b4.chunk.js": "/ERdiagrams-drawer/static/js/2.ff8f19b4.chunk.js",
+    "static/js/2.ff8f19b4.chunk.js.map": "/ERdiagrams-drawer/static/js/2.ff8f19b4.chunk.js.map",
+    "index.html": "/ERdiagrams-drawer/index.html",
+    "static/css/2.8c035d76.chunk.css.map": "/ERdiagrams-drawer/static/css/2.8c035d76.chunk.css.map",
+    "static/css/main.7bfe143d.chunk.css.map": "/ERdiagrams-drawer/static/css/main.7bfe143d.chunk.css.map",
+    "static/js/2.ff8f19b4.chunk.js.LICENSE.txt": "/ERdiagrams-drawer/static/js/2.ff8f19b4.chunk.js.LICENSE.txt",
+    "static/media/logoER.61383bf8.png": "/ERdiagrams-drawer/static/media/logoER.61383bf8.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.31679080.js",
+    "static/css/2.8c035d76.chunk.css",
+    "static/js/2.ff8f19b4.chunk.js",
+    "static/css/main.7bfe143d.chunk.css",
+    "static/js/main.9955c4fd.chunk.js"
+  ]
+}
